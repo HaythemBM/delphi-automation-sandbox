@@ -13,7 +13,7 @@ pipeline {
                 script {
                     echo 'Building Delphi Source Project...'
                     /* groovylint-disable-next-line LineLength */
-                    bat bat '"%WORKSPACE%\\Utils\\Build_10.4.bat" "%WORKSPACE%\\Projects\\Hello World\\Source" HelloWorld.dproj Debug Win32'
+                    bat '"%WORKSPACE%\\Utils\\Build_10.4.bat" "%WORKSPACE%\\Projects\\Hello World\\Source" HelloWorld.dproj Debug Win32'
                 }
             }
         }
