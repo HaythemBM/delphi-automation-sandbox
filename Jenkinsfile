@@ -12,20 +12,19 @@ pipeline {
             steps {
                 script {
                     echo 'Building Delphi Source Project...'
-                    bat """
-                    "%WORKSPACE%\Utils\Build_10.4.bat" "%WORKSPACE%\Projects\Hello World\Source" HelloWorld.dproj Debug Win32
-                    """
+                    /* groovylint-disable-next-line LineLength */
+                    bat bat '"%WORKSPACE%\\Utils\\Build_10.4.bat" "%WORKSPACE%\\Projects\\Hello World\\Source" HelloWorld.dproj Debug Win32'
                 }
             }
         }
-        
+
         stage('Build Test') {
             steps {
                 script {
                     echo 'Building Delphi Test Project...'
-                    bat """
-                    "%WORKSPACE%\Utils\Build_10.4.bat" "%WORKSPACE%\Projects\Hello World\Tests\DUnit" HelloWorldTests.dproj Debug Win32
-                    """
+                    /* groovylint-disable-next-line LineLength */
+                    bat '"%WORKSPACE%\\Utils\\Build_10.4.bat" "%WORKSPACE%\\Projects\\Hello World\\Tests\\DUnit" HelloWorldTests.dproj Debug Win32'
+
                 }
             }
         }
@@ -34,10 +33,10 @@ pipeline {
             steps {
                 script {
                     echo 'Running Tests...'
-                    bat """
-                    cd %WORKSPACE%\Projects\Hello World\Tests\DUnit\Win32\Debug
+                    bat '''
+                    cd %WORKSPACE%\\Projects\\Hello World\\Tests\\DUnit\\Win32\\Debug
                     HelloWorldTests.exe
-                    """
+                    '''
                 }
             }
         }
