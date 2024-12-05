@@ -41,6 +41,22 @@ pipeline {
             }
         }
 
+        stage('Publish Test Results') {
+            steps {
+                script {
+                    echo 'Publishing Test Results...'
+                }
+                xunit(
+                    tools: [
+                        JUnit(
+                            deleteOutputFiles: true,
+                            failIfNotNew: true,
+                            pattern: 'Projects\\Hello World\\Tests\\DUnit\\Win32\\Debug\\dunit-report.xml'
+                        )
+                    ]
+                )
+            }
+
         stage('Archive Artifacts') {
             steps {
                 archiveArtifacts artifacts: '**/*.exe', allowEmptyArchive: true
