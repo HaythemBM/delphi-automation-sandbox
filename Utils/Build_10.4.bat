@@ -8,5 +8,5 @@ cd /D %1
 rem second parameter is .dproj filename with relative path within work folder
 rem third parameter is profile to use (Debug, Release)
 rem fourth parameter is target platform (Win32, Win64, etc)
-msbuild %2 /t:build /p:Configuration=%3 /p:platform=%4 /p:OutputPath=%5
+msbuild %2 /t:build /p:Configuration=%3 /p:platform=%4
 
