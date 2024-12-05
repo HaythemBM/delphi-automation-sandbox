@@ -13,7 +13,7 @@ pipeline {
                 script {
                     echo 'Building Delphi Source Project...'
                     bat """
-                    "%WORKSPACE%\Utils\Build_10.4.bat" "%WORKSPACE%\Projects\Hello World\Source" HelloWorld.dproj Debug Win32 ".\Win32\Debug"
+                    "%WORKSPACE%\Utils\Build_10.4.bat" "%WORKSPACE%\Projects\Hello World\Source" HelloWorld.dproj Debug Win32
                     """
                 }
             }
@@ -24,7 +24,7 @@ pipeline {
                 script {
                     echo 'Building Delphi Test Project...'
                     bat """
-                    "%WORKSPACE%\Utils\Build_10.4.bat" "%WORKSPACE%\Projects\Hello World\Tests\DUnit" HelloWorldTests.dproj Debug Win32 ".\Win32\Debug"
+                    "%WORKSPACE%\Utils\Build_10.4.bat" "%WORKSPACE%\Projects\Hello World\Tests\DUnit" HelloWorldTests.dproj Debug Win32
                     """
                 }
             }
